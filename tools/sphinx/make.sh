@@ -1,7 +1,7 @@
 #sphinx-build: the following arguments are required: sourcedir, outputdir, filenames
 SPHINXBUILD=sphinx-build
 SOURCEDIR=doc
-BUILDDIR=build/docs
+BUILDDIR=docs
 
 # change to project directory. -- return to current dir after execution of this script.
 while true ; do

@@ -2,7 +2,12 @@
 Change log of gerber_writer
 ===========================
 
-Version 0.4.2.21
+Version 0.4.2.23
+----------------
+
+- Internal organisational changes. No functional impact.
+
+Version 0.4.2.22
 ----------------
 
 - Homepage and Documentation links changed, no functional impact.

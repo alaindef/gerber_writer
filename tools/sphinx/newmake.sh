@@ -1,9 +1,8 @@
 #sphinx-build: the following arguments are required: sourcedir, outputdir, filenames
 SPHINXBUILD=sphinx-build
 SOURCEDIR=doc
-#BUILDDIR=build/docs
-echo "target directory will be  sphincdocs, sibling of gerber_writer. includes .nojekyll"
-BUILDDIR=../sphinxdocs
+echo "target directory will be docs, under gerber_writer. includes .nojekyll"
+BUILDDIR=docs
 
 # change to project directory. -- return to current dir after execution of this script.
 while true ; do
@@ -18,21 +17,17 @@ while true ; do
     cd ..
 done
 
-
+rm -rf docs
 
 if [ -z "$1" ]
 then
   echo "\nargument missing. we will use  html\n"
-  rm -rf ../sphinxdocs
-
   $SPHINXBUILD -M html $SOURCEDIR $BUILDDIR $SPHINXOPTS $0
 else
   $SPHINXBUILD -M $1 $SOURCEDIR $BUILDDIR $SPHINXOPTS $O
 fi
 
-cd ../sphinxdocs/html
-touch .nojekyll
-git init
-git add --all
-git commit 
+touch docs/.nojekyll
+touch docs/html/.nojekyll
 
+echo "\npush to https://github.com/Karel-Tavernier/gerber_writer.git"
